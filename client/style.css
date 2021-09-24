@@ -1,0 +1,67 @@
+.cartoon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -40%);
+    width: 80vmin;
+    height: 80vmin;
+  }
+  
+  
+  .cartoon div {
+    position: absolute;
+    box-sizing: border-box;
+  }
+  
+  .b {
+    border: 0.5vmin solid black;
+  }
+  
+  .r {
+    border-radius: 100%;
+  }
+  
+  .hb::before,
+  .ha::after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  
+  /****/
+  
+  
+  
+  
+  .bubble {
+    width: 50%;
+    height: 30%;
+    left: 73%;
+    top: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5vmin;
+    background: #ffd;
+    box-shadow: 0 -0.25vmin, 0 0.125vmin;
+    font-family: "Comic Sans", "Comic Neue", sans-serif;
+  }
+  
+  .bubble::before {
+    width: 40%;
+    height: 100%;
+    bottom: -35%;
+    border-radius: 50%;
+    left:-20%;
+    box-shadow: 0.5vmin 0, 2vmin -0.5vmin #ffd, 2vmin -0.5vmin 0 0.5vmin;
+    clip-path: polygon(0% 49%, 150% 55%, 150% 100%, 0% 100%);
+  }
+
+  body {
+    background-image: url("https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F066ab8de-1ba3-11ec-95b9-6429167b0259.jpg?crop=3600%2C2025%2C0%2C187&resize=1200");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+  
