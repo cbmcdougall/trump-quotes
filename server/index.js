@@ -7,8 +7,6 @@ app.use(express.json());
 const port = process.env.PORT || 3000;
 
 
-
-
 app.get('/', (req, res) => {
     const quote = quotes[Math.floor(Math.random()*quotes.length)];
     res.json({message: quote})
