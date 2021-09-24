@@ -1,22 +1,25 @@
 
 const express = require('express');
+
+
 const app = express();
+app.use(express.json());
+
 const port = process.env.PORT || 3000;
 const quotes = require("./quotes.json")
 
 
 
 
-async function getQuote(){
-    const quote = quotes[Math.floor(Math.random()*quotes.length)];
-    const json = JSON.stringify({quote:quote});
-
-    return new Response(json, )
+function getQuote(){
+   
 }
 
 
+
 app.get('/', (req, res) => {
-    res.json({message: 'Hello World!'})
+    const quote = quotes[Math.floor(Math.random()*quotes.length)];
+    res.json({message: quote})
 });
 
 app.listen(port, () => {
