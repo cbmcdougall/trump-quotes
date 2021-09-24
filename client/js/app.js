@@ -11,4 +11,11 @@ function appendQuote(quote){
     newLi.textContent = `${quote}`
     const quoteList = document.querySelector('ul');
     quoteList.append(newLi);
+    console.log(newLi);
 };
+
+
+module.exports = { 
+    getQuotes,
+    appendQuote
+}
