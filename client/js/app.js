@@ -1,7 +1,8 @@
 function getQuotes(){
     fetch('http://localhost:3000')
         .then(r => r.json())
-        .then(appendQuote)
+        // .then(obj =>console.log(obj.quote))
+        .then(obj => appendQuote(obj.quote))
         .catch(console.warn)
 };
 

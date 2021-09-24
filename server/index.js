@@ -1,15 +1,17 @@
 const express = require('express');
 const quotes = require('./quotes.json');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const port = process.env.PORT || 3000;
 
 
 app.get('/', (req, res) => {
     const quote = quotes[Math.floor(Math.random()*quotes.length)];
-    res.json({message: quote})
+    res.json({quote: quote})
 });
 
 
