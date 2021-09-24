@@ -1,21 +1,20 @@
 
 const express = require('express');
 const quotes = require('./quotes.json');
+
 const app = express();
+app.use(express.json());
+
 const port = process.env.PORT || 3000;
 
 
 
 
-async function getQuote(){
+app.get('/', (req, res) => {
     const quote = quotes[Math.floor(Math.random()*quotes.length)];
-    const json = JSON.stringify({quote:quote});
+    res.json({message: quote})
+});
 
-    return new Response(json, )
-}
-
-
-app.use(express.json());
 
 app.get('/:word', (req,res) => {
     // String.includes() is case-sensitive, hence converting everything to lowerCase when searching
@@ -24,6 +23,7 @@ app.get('/:word', (req,res) => {
     const returnQuote = matchedQuotes[Math.floor(Math.random() * matchedQuotes.length)];
     res.json({quote: returnQuote});
 })
+
 
 app.listen(port, () => {
     console.log(`Express recently departed from port ${port}`)
